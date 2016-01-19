@@ -64,6 +64,7 @@
 		4C7CA9FC1C4ECF940083A336 /* MCMS */ = {
 			isa = PBXGroup;
 			children = (
+				4C7CAA061C4ECF940083A336 /* Main.storyboard */,
 				4C7CAA001C4ECF940083A336 /* AppDelegate.h */,
 				4C7CAA011C4ECF940083A336 /* AppDelegate.m */,
 				4C7CAA031C4ECF940083A336 /* ViewController.h */,
@@ -72,7 +73,6 @@
 				4C7CAA151C4ED5550083A336 /* MagicalCreature.m */,
 				A80451961C4EE3F600B59865 /* CreatureViewController.h */,
 				A80451971C4EE3F600B59865 /* CreatureViewController.m */,
-				4C7CAA061C4ECF940083A336 /* Main.storyboard */,
 				4C7CAA091C4ECF940083A336 /* Assets.xcassets */,
 				4C7CAA0B1C4ECF940083A336 /* LaunchScreen.storyboard */,
 				4C7CAA0E1C4ECF940083A336 /* Info.plist */,

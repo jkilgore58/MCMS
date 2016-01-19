@@ -177,12 +177,31 @@
                                     <constraint firstAttribute="width" secondItem="jeX-bR-c8g" secondAttribute="height" multiplier="343:339" id="08W-38-vZT"/>
                                 </constraints>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cla-LQ-3Yc">
+                                <rect key="frame" x="-4" y="537" width="383" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellID2" id="ehu-qw-Lb6">
+                                        <rect key="frame" x="0.0" y="28" width="383" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ehu-qw-Lb6" id="TYz-gj-UaV">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dKb-Gm-RoS" id="DQU-YX-gcR"/>
+                                    <outlet property="delegate" destination="dKb-Gm-RoS" id="319-K1-uZL"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="g9Z-F4-QCF" firstAttribute="top" secondItem="qe4-kf-C6H" secondAttribute="bottom" constant="8" id="2RW-Pl-H7K"/>
                             <constraint firstItem="jeX-bR-c8g" firstAttribute="top" secondItem="muF-qr-QTo" secondAttribute="bottom" constant="8" id="6Hv-ci-ngQ"/>
                             <constraint firstItem="bZj-XI-XwQ" firstAttribute="centerY" secondItem="g9Z-F4-QCF" secondAttribute="centerY" id="8Ly-an-6ah"/>
+                            <constraint firstItem="cla-LQ-3Yc" firstAttribute="top" secondItem="jeX-bR-c8g" secondAttribute="bottom" constant="8" id="DFR-yL-fLF"/>
                             <constraint firstItem="muF-qr-QTo" firstAttribute="leading" secondItem="F0o-uQ-odt" secondAttribute="leadingMargin" id="QCI-EA-bqp"/>
                             <constraint firstItem="jeX-bR-c8g" firstAttribute="leading" secondItem="F0o-uQ-odt" secondAttribute="leadingMargin" id="ZmN-bC-ZJc"/>
                             <constraint firstItem="g9Z-F4-QCF" firstAttribute="leading" secondItem="F0o-uQ-odt" secondAttribute="leadingMargin" id="bke-TX-AXZ"/>
@@ -190,12 +209,16 @@
                             <constraint firstItem="Zxm-F8-VrN" firstAttribute="leading" secondItem="F0o-uQ-odt" secondAttribute="leadingMargin" id="dkf-jS-YrL"/>
                             <constraint firstItem="bZj-XI-XwQ" firstAttribute="leading" secondItem="g9Z-F4-QCF" secondAttribute="trailing" constant="25" id="dl5-gb-nZ5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jeX-bR-c8g" secondAttribute="trailing" constant="-4" id="gns-6m-EvZ"/>
+                            <constraint firstItem="cla-LQ-3Yc" firstAttribute="leading" secondItem="F0o-uQ-odt" secondAttribute="leadingMargin" constant="-20" id="lmr-3d-iJw"/>
                             <constraint firstItem="Zxm-F8-VrN" firstAttribute="top" secondItem="qe4-kf-C6H" secondAttribute="bottom" constant="8" id="pkc-MI-JbA"/>
                             <constraint firstItem="muF-qr-QTo" firstAttribute="top" secondItem="g9Z-F4-QCF" secondAttribute="bottom" constant="8" id="wlw-P8-7g6"/>
+                            <constraint firstItem="Px5-Cc-pay" firstAttribute="top" secondItem="cla-LQ-3Yc" secondAttribute="bottom" id="zPN-su-PAP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cla-LQ-3Yc" secondAttribute="trailing" constant="-20" id="zQ0-0U-zoB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="creatureImageView" destination="jeX-bR-c8g" id="oO7-ro-vqu"/>
+                        <outlet property="creatureTableView" destination="cla-LQ-3Yc" id="53e-BW-kWU"/>
                         <outlet property="descriptionLabel" destination="muF-qr-QTo" id="xud-5R-sD7"/>
                         <outlet property="editCreatureNameLabel" destination="Zxm-F8-VrN" id="FdA-cv-26X"/>
                         <outlet property="editCreatureNameTextField" destination="g9Z-F4-QCF" id="QNw-vS-M75"/>
