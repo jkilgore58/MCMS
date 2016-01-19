@@ -9,6 +9,9 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *addNameTextField;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *addWeaponTextField;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,12 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)onBattleButtonPressed:(UIBarButtonItem *)sender {
+}
+- (IBAction)onAddButtonPressed:(UIButton *)sender {
 }
 
 @end
