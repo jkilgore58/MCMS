@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *editCreatureNameTextField;
 @property (strong, nonatomic) IBOutlet UILabel *editCreatureNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *creatureImageView;
 
 @end
 
@@ -29,6 +30,9 @@
     [self.descriptionLabel sizeToFit];
 
     self.descriptionLabel.text = self.creature.details;
+    
+    self.creatureImageView.image = self.creature.images;
+
 }
 
 - (IBAction)onEditButtonPressed:(UIButton *)editButton {

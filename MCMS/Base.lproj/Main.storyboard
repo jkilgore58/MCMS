@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -46,18 +47,18 @@
                                         <rect key="frame" x="0.0" y="28" width="391" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dSM-hr-2V0" id="eCk-oq-EXr">
-                                            <rect key="frame" x="0.0" y="0.0" width="358" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8hM-4a-tqA">
-                                                    <rect key="frame" x="15" y="18" width="32" height="20"/>
+                                                    <rect key="frame" x="15" y="19" width="31.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Ss-Ck-ZOn">
-                                                    <rect key="frame" x="15" y="38" width="41" height="14"/>
+                                                    <rect key="frame" x="15" y="38.5" width="40.5" height="13.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -170,21 +171,31 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jeX-bR-c8g">
+                                <rect key="frame" x="16" y="186" width="347" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jeX-bR-c8g" secondAttribute="height" multiplier="343:339" id="08W-38-vZT"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="g9Z-F4-QCF" firstAttribute="top" secondItem="qe4-kf-C6H" secondAttribute="bottom" constant="8" id="2RW-Pl-H7K"/>
+                            <constraint firstItem="jeX-bR-c8g" firstAttribute="top" secondItem="muF-qr-QTo" secondAttribute="bottom" constant="8" id="6Hv-ci-ngQ"/>
                             <constraint firstItem="bZj-XI-XwQ" firstAttribute="centerY" secondItem="g9Z-F4-QCF" secondAttribute="centerY" id="8Ly-an-6ah"/>
                             <constraint firstItem="muF-qr-QTo" firstAttribute="leading" secondItem="F0o-uQ-odt" secondAttribute="leadingMargin" id="QCI-EA-bqp"/>
+                            <constraint firstItem="jeX-bR-c8g" firstAttribute="leading" secondItem="F0o-uQ-odt" secondAttribute="leadingMargin" id="ZmN-bC-ZJc"/>
                             <constraint firstItem="g9Z-F4-QCF" firstAttribute="leading" secondItem="F0o-uQ-odt" secondAttribute="leadingMargin" id="bke-TX-AXZ"/>
                             <constraint firstItem="muF-qr-QTo" firstAttribute="trailing" secondItem="F0o-uQ-odt" secondAttribute="trailingMargin" id="bpi-Xa-Y6T"/>
                             <constraint firstItem="Zxm-F8-VrN" firstAttribute="leading" secondItem="F0o-uQ-odt" secondAttribute="leadingMargin" id="dkf-jS-YrL"/>
                             <constraint firstItem="bZj-XI-XwQ" firstAttribute="leading" secondItem="g9Z-F4-QCF" secondAttribute="trailing" constant="25" id="dl5-gb-nZ5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jeX-bR-c8g" secondAttribute="trailing" constant="-4" id="gns-6m-EvZ"/>
                             <constraint firstItem="Zxm-F8-VrN" firstAttribute="top" secondItem="qe4-kf-C6H" secondAttribute="bottom" constant="8" id="pkc-MI-JbA"/>
                             <constraint firstItem="muF-qr-QTo" firstAttribute="top" secondItem="g9Z-F4-QCF" secondAttribute="bottom" constant="8" id="wlw-P8-7g6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="creatureImageView" destination="jeX-bR-c8g" id="oO7-ro-vqu"/>
                         <outlet property="descriptionLabel" destination="muF-qr-QTo" id="xud-5R-sD7"/>
                         <outlet property="editCreatureNameLabel" destination="Zxm-F8-VrN" id="FdA-cv-26X"/>
                         <outlet property="editCreatureNameTextField" destination="g9Z-F4-QCF" id="QNw-vS-M75"/>

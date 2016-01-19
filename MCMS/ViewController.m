@@ -30,11 +30,24 @@
     MagicalCreature *creatureThree = [[MagicalCreature alloc]initWithName:@"Stan" andDetails:@"Hates Cartman" andAccessory:@"Cool hat" andCreatureImage:[UIImage imageNamed:@"creature3"]];
 
     self.creatures = [NSMutableArray arrayWithObjects:creatureOne, creatureTwo, creatureThree, nil];
+
+    
+//    self.randomImages = [NSArray arrayWithObjects:[UIImage imageNamed:@"creature4"],
+//                         [UIImage imageNamed:@"creature5"],
+//                         [UIImage imageNamed:@"creature6"],
+//                         [UIImage imageNamed:@"creature7"],
+//                         [UIImage imageNamed:@"creature8"],
+//                         [UIImage imageNamed:@"creature9"],
+//                         [UIImage imageNamed:@"creature10"],
+//                         nil];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
     MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
+    
+
+    
     cell.textLabel.text = creature.name;
     cell.detailTextLabel.text = creature.details;
     cell.imageView.image = creature.images;
@@ -55,11 +68,13 @@
 //    NSString *newDescription = self.descriptionTextField.text;
 //    UIImage *newImage = [UIImage imageNamed:@"newCreature"];
 //    NSMutableArray *newAccessory = [NSMutableArray arrayWithObjects:@"Longbow", @"Hammer", @"Sword", nil];
-
+    UIImage *randomImages = [UIImage imageNamed:[NSString stringWithFormat:@"creature%u.png", 1+arc4random_uniform(10)]];
+    
+    
     MagicalCreature *newCreature = [[MagicalCreature alloc]initWithName:self.addNameTextField.text
                                                              andDetails:self.descriptionTextField.text
                                                            andAccessory:nil
-                                                       andCreatureImage:nil];
+                                                       andCreatureImage:randomImages];
 
     [self.creatures addObject:newCreature];
     self.addNameTextField.text = nil;
