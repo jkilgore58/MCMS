@@ -10,14 +10,14 @@
 #import "MagicalCreature.h"
 #import "ViewController.h"
 
-@interface CreatureViewController () <UITableViewDelegate, UITextFieldDelegate, UITableViewDataSource>
+@interface CreatureViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITextField *editCreatureNameTextField;
 @property (strong, nonatomic) IBOutlet UILabel *editCreatureNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *creatureImageView;
 @property (weak, nonatomic) IBOutlet UITableView *creatureTableView;
-@property NSMutableArray *accessoryArray;
+//@property NSMutableArray *accessoryArray;
 
 
 @end
@@ -36,20 +36,22 @@
     self.descriptionLabel.text = self.creature.details;
     
     self.creatureImageView.image = self.creature.images;
-    self.accessoryArray = self.creature.accessories;
+//    self.accessoryArray = self.creature.accessories;
 
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.accessoryArray.count;
-    
+//return self.accessoryArray.count;
+    return 0;
 }
 
-//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return nil;
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID2"];
 //    cell.textLabel.text = [self.accessoryArray objectAtIndex:indexPath.row];
-//}
+}
 
 - (IBAction)onEditButtonPressed:(UIButton *)editButton {
 
@@ -61,6 +63,9 @@
     {
         [editButton setTitle:@"Edit" forState:UIControlStateNormal];
         self.editCreatureNameTextField.hidden = YES;
+        self.creature.name = self.editCreatureNameTextField.text;
+        self.editCreatureNameLabel.text = self.editCreatureNameTextField.text;
+        self.title = self.editCreatureNameTextField.text;
     }
 }
 @end
