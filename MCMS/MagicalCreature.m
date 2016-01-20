@@ -11,7 +11,7 @@
 
 @implementation MagicalCreature
 
--(instancetype)initWithName:(NSString *)name andDetails:(NSString *)details andAccessory:(NSString *)accessories andCreatureImage:(UIImage *)images {
+-(instancetype)initWithName:(NSString *)name andDetails:(NSString *)details andAccessory:(NSMutableArray *)accessories andCreatureImage:(UIImage *)images; {
     
     self = [super init];
     
@@ -21,7 +21,6 @@
         self.accessories = accessories;
         self.images = images;
     }
-    
     return self;
 }
 

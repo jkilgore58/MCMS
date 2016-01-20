@@ -9,14 +9,13 @@
 #import "ViewController.h"
 #import "MagicalCreature.h"
 #import "CreatureViewController.h"
+#include "BattleViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITextField *addNameTextField;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
-
-@property NSMutableArray *creatures;
 
 @end
 
@@ -25,9 +24,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    MagicalCreature *creatureOne = [[MagicalCreature alloc]initWithName:@"Cartman" andDetails:@"Sarcastic Wit" andAccessory:@"Guns and Beer" andCreatureImage:[UIImage imageNamed:@"creature1"]];
-    MagicalCreature *creatureTwo = [[MagicalCreature alloc]initWithName:@"Kyle" andDetails:@"Drunk Dad" andAccessory:@"Hight IQ" andCreatureImage:[UIImage imageNamed:@"creature2"]];
-    MagicalCreature *creatureThree = [[MagicalCreature alloc]initWithName:@"Stan" andDetails:@"Hates Cartman" andAccessory:@"Cool hat" andCreatureImage:[UIImage imageNamed:@"creature3"]];
+    MagicalCreature *creatureOne = [[MagicalCreature alloc]
+                                    initWithName:@"Cartman"
+                                    andDetails:@"Sarcastic Wit"
+                                    andAccessory:[NSMutableArray arrayWithObjects:@"Hats", @"Ugly Wife", @"Cars", @"Big Nose", nil]
+                                    andCreatureImage:[UIImage imageNamed:@"creature1"]];
+
+    MagicalCreature *creatureTwo = [[MagicalCreature alloc]
+                                    initWithName:@"Kyle"
+                                    andDetails:@"Drunk Dad"
+                                    andAccessory:[NSMutableArray arrayWithObjects:@"Big Ears", @"Bad Temper", @"Fancy Belt", @"Smelly Feet", nil]
+                                    andCreatureImage:[UIImage imageNamed:@"creature2"]];
+
+    MagicalCreature *creatureThree = [[MagicalCreature alloc]
+                                    initWithName:@"Stan"
+                                    andDetails:@"Hates Cartman"
+                                    andAccessory:[NSMutableArray arrayWithObjects:@"Cats", @"Dogs", @"Birds", @"Cows", @"Chickens", @"Frogs",nil]
+                                    andCreatureImage:[UIImage imageNamed:@"creature3"]];
 
     self.creatures = [NSMutableArray arrayWithObjects:creatureOne, creatureTwo, creatureThree, nil];
 }
@@ -54,20 +67,15 @@
 - (IBAction)onBattleButtonPressed:(UIBarButtonItem *)sender {
 }
 
-
 - (IBAction)onAddButtonPressed:(UIButton *)sender {
-    
-//    NSString *newName = self.addNameTextField.text;
-//    NSString *newDescription = self.descriptionTextField.text;
-//    UIImage *newImage = [UIImage imageNamed:@"newCreature"];
-//    NSMutableArray *newAccessory = [NSMutableArray arrayWithObjects:@"Longbow", @"Hammer", @"Sword", nil];
+
     UIImage *randomImages = [UIImage imageNamed:[NSString stringWithFormat:@"creature%u.png", 1+arc4random_uniform(10)]];
     
-    
-    MagicalCreature *newCreature = [[MagicalCreature alloc]initWithName:self.addNameTextField.text
-                                                             andDetails:self.descriptionTextField.text
-                                                           andAccessory:nil
-                                                       andCreatureImage:randomImages];
+    MagicalCreature *newCreature = [[MagicalCreature alloc]
+                                    initWithName:self.addNameTextField.text
+                                    andDetails:self.descriptionTextField.text
+                                    andAccessory:nil
+                                    andCreatureImage:randomImages];
 
     [self.creatures addObject:newCreature];
     self.addNameTextField.text = nil;
@@ -77,11 +85,24 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    CreatureViewController *dvc = segue.destinationViewController;
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    dvc.title = [[self.creatures objectAtIndex:indexPath.row]name];
-    MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
-    dvc.creature = creature;
+    if ([segue.identifier isEqualToString:@"BattleSegue"]) {
+        BattleViewController *dvc = segue.destinationViewController;
+        dvc.creature = self.creature;
+        dvc.creatures = self.creatures;
+    }
+    else
+    {
+        CreatureViewController *dvc = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        dvc.title = [[self.creatures objectAtIndex:indexPath.row]name];
+        MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
+        dvc.creature = creature;
+    }
+}
+
+-(IBAction)unwind:(UIStoryboardSegue *)sender
+{
+    
 }
 
 

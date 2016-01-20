@@ -14,10 +14,9 @@
 @property NSString *name;
 @property NSString *details;
 @property UIImage *images;
-@property NSString *accessories;
-
+@property NSMutableArray *accessories;
 
 //Custom initializer
--(instancetype)initWithName:(NSString *)name andDetails:(NSString *)details andAccessory:(NSString *)accessories andCreatureImage:(UIImage *)images;
+-(instancetype)initWithName:(NSString *)name andDetails:(NSString *)details andAccessory:(NSMutableArray *)accessories andCreatureImage:(UIImage *)images;
 
 @end

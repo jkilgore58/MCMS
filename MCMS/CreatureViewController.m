@@ -17,8 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *creatureImageView;
 @property (weak, nonatomic) IBOutlet UITableView *creatureTableView;
-//@property NSMutableArray *accessoryArray;
-
 
 @end
 
@@ -28,29 +26,23 @@
     [super viewDidLoad];
 
     self.editCreatureNameTextField.hidden = YES;
-
     self.editCreatureNameLabel.text = self.creature.name;
-
     [self.descriptionLabel sizeToFit];
-
     self.descriptionLabel.text = self.creature.details;
-    
     self.creatureImageView.image = self.creature.images;
-//    self.accessoryArray = self.creature.accessories;
-
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//return self.accessoryArray.count;
-    return 0;
+    return self.creature.accessories.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    return nil;
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID2"];
-//    cell.textLabel.text = [self.accessoryArray objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID2"];
+    NSString *accessory = [self.creature.accessories objectAtIndex:indexPath.row];
+    cell.textLabel.text = accessory;
+    return cell;
 }
 
 - (IBAction)onEditButtonPressed:(UIButton *)editButton {
@@ -58,6 +50,7 @@
     if ([editButton.titleLabel.text isEqualToString:@"Edit"]) {
         [editButton setTitle:@"Done" forState:UIControlStateNormal];
         self.editCreatureNameTextField.hidden = NO;
+        self.editCreatureNameTextField.text = nil;
     }
     else
     {

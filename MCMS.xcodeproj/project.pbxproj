@@ -15,6 +15,7 @@
 		4C7CAA0D1C4ECF940083A336 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7CAA0B1C4ECF940083A336 /* LaunchScreen.storyboard */; };
 		4C7CAA161C4ED5550083A336 /* MagicalCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7CAA151C4ED5550083A336 /* MagicalCreature.m */; };
 		A80451981C4EE3F600B59865 /* CreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80451971C4EE3F600B59865 /* CreatureViewController.m */; };
+		A804519E1C4F18CC00B59865 /* BattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A804519D1C4F18CC00B59865 /* BattleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		4C7CAA151C4ED5550083A336 /* MagicalCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalCreature.m; sourceTree = "<group>"; };
 		A80451961C4EE3F600B59865 /* CreatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureViewController.h; sourceTree = "<group>"; };
 		A80451971C4EE3F600B59865 /* CreatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureViewController.m; sourceTree = "<group>"; };
+		A804519C1C4F18CC00B59865 /* BattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleViewController.h; sourceTree = "<group>"; };
+		A804519D1C4F18CC00B59865 /* BattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +67,6 @@
 		4C7CA9FC1C4ECF940083A336 /* MCMS */ = {
 			isa = PBXGroup;
 			children = (
-				4C7CAA061C4ECF940083A336 /* Main.storyboard */,
 				4C7CAA001C4ECF940083A336 /* AppDelegate.h */,
 				4C7CAA011C4ECF940083A336 /* AppDelegate.m */,
 				4C7CAA031C4ECF940083A336 /* ViewController.h */,
@@ -73,6 +75,9 @@
 				4C7CAA151C4ED5550083A336 /* MagicalCreature.m */,
 				A80451961C4EE3F600B59865 /* CreatureViewController.h */,
 				A80451971C4EE3F600B59865 /* CreatureViewController.m */,
+				A804519C1C4F18CC00B59865 /* BattleViewController.h */,
+				A804519D1C4F18CC00B59865 /* BattleViewController.m */,
+				4C7CAA061C4ECF940083A336 /* Main.storyboard */,
 				4C7CAA091C4ECF940083A336 /* Assets.xcassets */,
 				4C7CAA0B1C4ECF940083A336 /* LaunchScreen.storyboard */,
 				4C7CAA0E1C4ECF940083A336 /* Info.plist */,
@@ -162,6 +167,7 @@
 			files = (
 				4C7CAA051C4ECF940083A336 /* ViewController.m in Sources */,
 				4C7CAA161C4ED5550083A336 /* MagicalCreature.m in Sources */,
+				A804519E1C4F18CC00B59865 /* BattleViewController.m in Sources */,
 				4C7CAA021C4ECF940083A336 /* AppDelegate.m in Sources */,
 				A80451981C4EE3F600B59865 /* CreatureViewController.m in Sources */,
 				4C7CA9FF1C4ECF940083A336 /* main.m in Sources */,
